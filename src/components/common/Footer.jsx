@@ -2,7 +2,7 @@ import React from "react";
 import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
 import SendIcon from "@mui/icons-material/Send";
-import Logo from "../../assets/Logo/Logo-Full-Dark.png";
+import Logo from "../../assets/Logo/Logo-Full-Dark.jpg";
 import {
   FaFacebook,
   FaGoogle,

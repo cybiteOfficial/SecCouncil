@@ -84,11 +84,11 @@ module.exports = {
       //   900: "#001B0D",
       // },
       caribbeangreen: {
-        5: "#FFEDE0",   // Lightest tint of #FF9500
-        25: "#FFD6B3",  // Light tint of #FF9500
-        50: "#FFC080",  // Medium-light tint of #FF9500
-        100: "#FFAA4D", // Medium tint of #FF9500
-        200: "#FF9500", // Base color
+        5: "#184882",   // Lightest tint of #FF9500
+        25: "#184882",  // Light tint of #FF9500
+        50: "#184882",  // Medium-light tint of #FF9500
+        100: "#184882", // Medium tint of #FF9500
+        200: "#184882", // Base color
         300: "#E68400", // Darker shade
         400: "#CC7400", // Even darker shade
         500: "#B36300", // Moderate dark shade
@@ -107,7 +107,7 @@ module.exports = {
         400: "#A07C39",
         500: "#88662D",
         600: "#705122",
-        700: "#ff9500",
+        700: "#184882",
         800: "#41260B",
         900: "#291100",
       },
@@ -126,18 +126,18 @@ module.exports = {
         900: "#340019",
       },
       yellow: {
-        5: "#FF9500",
-        25: "#FF9500",
-        50: "#FF9500",
-        100: "#FF9500",
-        200: "#FF9500",
-        300: "#FF9500",
-        400: "#FF9500",
-        500: "#FF9500",
-        600: "#FF9500",
-        700: "#FF9500",
-        800: "#FF9500",
-        900: "#FF9500",
+        5: "#34b6ff",
+        25: "#34b6ff",
+        50: "#34b6ff",
+        100: "#34b6ff",
+        200: "#34b6ff",
+        300: "#34b6ff",
+        400: "#34b6ff",
+        500: "#34b6ff",
+        600: "#34b6ff",
+        700: "#34b6ff",
+        800: "#34b6ff",
+        900: "#34b6ff",
     }
 ,
       "pure-greys": {

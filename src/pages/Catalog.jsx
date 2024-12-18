@@ -84,7 +84,7 @@ const Catalog = () => {
                             {catalogPageData?.data?.selectedCategory?.name}
                         </span>
                     </p>
-                    <p className="text-3xl text-black">
+                    <p className="text-3xl text-mwhite">
                         {catalogPageData?.data?.selectedCategory?.name}
                     </p>
                     <p className="max-w-[870px] text-black">
