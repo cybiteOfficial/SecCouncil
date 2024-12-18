@@ -39,7 +39,7 @@ const Community = [
 const Footer = () => {
   return (
     <div className="bg-richblack-800"
-    style={{ boxShadow: "0px -4px 15px rgba(255, 165, 0, 0.5)" }}>
+    style={{  boxShadow: "0px -4px 15px rgba(0, 74, 173, 0.5)" }}>
       <div className="flex flex-col lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-black leading-6 mx-auto py-14">
         <div className="w-full flex flex-col lg:flex-row pb-5 border-b border-black">
           <div className="w-full lg:w-[50%] flex flex-wrap lg:flex-row justify-between lg:border-r lg:border-black pl-3 lg:pr-5 gap-3">

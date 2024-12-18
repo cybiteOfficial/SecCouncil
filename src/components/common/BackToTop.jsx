@@ -12,6 +12,7 @@ const BackToTop = () => {
         setIsVisible(false);
       }
     };
+    
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -28,6 +29,11 @@ const BackToTop = () => {
       className={`back-to-top ${isVisible ? 'show' : ''}`}
       onClick={handleClick}
       aria-label="Back to top"
+      style = {{
+        backgroundColor: "#6ca3cc",
+        color: "white"
+
+      }}
     >
       <KeyboardArrowUpIcon />
     </button>

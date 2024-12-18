@@ -12,7 +12,7 @@ const InstructorSection = () => {
             <img
               src={Instructor}
               alt=""
-              className="shadow-white shadow-[-20px_-20px_0_0]"
+              className="shadow-yellow-800 shadow-[-10px_-10px_0_0]"
             />
           </div>
           <div className="lg:w-[50%] px-10 flex gap-10 flex-col">
@@ -21,7 +21,7 @@ const InstructorSection = () => {
               <HighlightText text={"instructor"} />
             </h1>
 
-            <p className="font-medium text-[16px] text-justify w-[90%] text-richblack-300">
+            <p className="font-medium text-[16px] text-justify w-[90%] text-white">
               Instructors from around the world teach millions of students on
               SecCouncil. We provide the tools and skills to teach what you
               love. 

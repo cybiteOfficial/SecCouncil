@@ -47,7 +47,7 @@ function Navbar() {
 
   return (
     <div className="navbarContainer sticky top-0 left-0 z-1000">
-      <div className="flex items-center justify-center bg-yellow-5 border-b-[1px] border-b-black-800">
+      <div className="flex items-center justify-center bg-black border-b-[1px] border-b-mwhite">
         <div className="flex flex-col md:flex-row w-full max-w-maxContent items-center justify-between px-4 py-2">
           <div className="flex items-center justify-between w-full md:w-auto px-1 py-1">
             <Link to="/" onClick={closeMobileMenu}>
@@ -60,7 +60,7 @@ function Navbar() {
               />
             </Link>
             <button
-              className="block md:hidden text-2xl text-richblack-25 focus:outline-none"
+              className="block md:hidden text-2xl text-mwhite focus:outline-none"
               onClick={toggleMobileMenu}
             >
               {mobileMenuOpen ? "✖" : <AiOutlineMenu />}
@@ -75,14 +75,14 @@ function Navbar() {
               {NavbarLinks.map(({ title, path }, index) => (
                 <li
                   key={index}
-                  className="mb-2 md:mb-0 transition duration-300 ease-in-out transform hover:text-black-5 hover:scale-105 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-700 after:ease-in-out hover:after:w-full"
+                  className="mb-2 md:mb-0 transition duration-300 ease-in-out transform hover:text-mwhite hover:scale-105 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-700 after:ease-in-out hover:after:w-full"
                 >
                   {title === "Catalog" ? (
                     <div
                       className={`group relative flex cursor-pointer items-center gap-1 ${
                         matchRoute("/catalog/:catalogName")
                           ? "text-yellow-100 hover:text-yellow-200"
-                          : "text-richblack-25 hover:text-black"
+                          : "text-mwhite hover:text-mwhite"
                       }`}
                       onClick={toggleDropdown}
                       onMouseEnter={() => setDropdownOpen(true)}
@@ -107,7 +107,7 @@ function Navbar() {
               .split(" ")
               .join("-")
               .toLowerCase()}`}
-            className="rounded-lg bg-transparent py-4 pl-4 hover:bg-black"
+            className="rounded-lg bg-transparent py-4 pl-4 hover:bg-mwhite"
             key={i}
             onClick={toggleDropdown}
           >
@@ -127,9 +127,9 @@ function Navbar() {
                       <p
                         className={`${
                           matchRoute(path)
-                            ? "text-black"
-                            : "text-richblack-25"
-                        } hover:text-black`}
+                            ? "text-mwhite"
+                            : "text-mwhite"
+                        } hover:text-mwhite`}
                       >
                         {title}
                       </p>
@@ -149,7 +149,7 @@ function Navbar() {
                   className="relative"
                   onClick={closeMobileMenu}
                 >
-                  <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
+                  <AiOutlineShoppingCart className="text-2xl text-mwhite" />
                   {totalItems > 0 && (
                     <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-500">
                       {totalItems}
@@ -164,7 +164,7 @@ function Navbar() {
                       className={`rounded-md px-4 w-[90px] py-2 transition duration-300 hover:scale-95 ${
                         matchRoute("/login")
                           ? "bg-richblack-800 text-white"
-                          : "bg-yellow-50 text-black "
+                          : "bg-gradient-to-r from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-white "
                       }`}
                     >
                       Log In
@@ -175,7 +175,7 @@ function Navbar() {
                       className={`rounded-md px-4 w-[90px] py-2 transition duration-300 hover:scale-95 ${
                         matchRoute("/signup")
                           ? "bg-richblack-800 text-white"
-                          : "bg-mwhite text-white hover:bg-richblack-800 hover:text-gray-200 "
+                          : "bg-gradient-to-r from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-white hover:bg-mwhite hover:white "
                       }`}
                     >
                       Sign Up

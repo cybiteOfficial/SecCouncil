@@ -22,7 +22,7 @@ const CodeBlocks = ({
         {heading}
 
         {/* Sub Heading */}
-        <div className="text-richblack-300 text-base font-bold w-[85%] -mt-3">
+        <div className="text-white text-base font-bold w-[85%] -mt-3">
           {subheading}
         </div>
 

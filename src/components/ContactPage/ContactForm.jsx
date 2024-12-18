@@ -7,7 +7,7 @@ const ContactForm = () => {
       <h1 className="text-4xl 
             leading-10 
             font-semibold 
-            tex-black-5">
+            bg-gradient-to-b from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-transparent bg-clip-text font-bold">
         Got an Idea? We&apos;ve got the skills. Let&apos;s team up !!
       </h1>
       <p>
