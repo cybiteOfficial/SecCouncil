@@ -9,7 +9,6 @@ import { apiConnector } from "../../services/apiconnector";
 import { categories } from "../../services/apis";
 import { ACCOUNT_TYPE } from "../../utils/constants";
 import ProfileDropdown from "../core/Auth/ProfileDropDown";
-
 import ProgressBar from "./progressbar";
 
 function Navbar() {
@@ -22,12 +21,16 @@ function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  // Fetch categories on component mount
   useEffect(() => {
     const fetchCategories = async () => {
       setLoading(true);
       try {
         const res = await apiConnector("GET", categories.CATEGORIES_API);
-        setSubLinks(res.data.data);
+        console.log(res);  // Check the response structure
+        if (res?.data?.data) {
+          setSubLinks(res.data.data); // Store categories
+        }
       } catch (error) {
         console.log("Could not fetch Categories.", error);
       }
@@ -67,9 +70,7 @@ function Navbar() {
             </button>
           </div>
           <nav
-            className={`${
-              mobileMenuOpen ? "block" : "hidden"
-            } md:block mt-4 md:mt-0`}
+            className={`${mobileMenuOpen ? "block" : "hidden"} md:block mt-4 md:mt-0`}
           >
             <ul className="flex flex-col md:flex-row w-full max-w-maxContent items-center justify-between px-4 py-2 gap-y-4 md:gap-y-0 md:gap-x-14">
               {NavbarLinks.map(({ title, path }, index) => (
@@ -79,11 +80,10 @@ function Navbar() {
                 >
                   {title === "Catalog" ? (
                     <div
-                      className={`group relative flex cursor-pointer items-center gap-1 ${
-                        matchRoute("/catalog/:catalogName")
-                          ? "text-yellow-100 hover:text-yellow-200"
-                          : "text-mwhite hover:text-mwhite"
-                      }`}
+                      className={`group relative flex cursor-pointer items-center gap-1 ${matchRoute("/catalog/:catalogName")
+                        ? "text-yellow-100 hover:text-yellow-200"
+                        : "text-mwhite hover:text-mwhite"
+                        }`}
                       onClick={toggleDropdown}
                       onMouseEnter={() => setDropdownOpen(true)}
                       onMouseLeave={() => setDropdownOpen(false)}
@@ -91,33 +91,31 @@ function Navbar() {
                       <p>{title}</p>
                       <BsChevronDown />
                       {dropdownOpen && (
-                        <div className="visible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-black p-4 text-mwhite opacity-100 transition-all duration-150 group-hover:translate-y-[1.65em] lg:w-[300px]">
+                        <div className="absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-black p-4 text-mwhite opacity-100 transition-all duration-150 group-hover:translate-y-[1.65em] lg:w-[300px]">
                           <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-black"></div>
                           {loading ? (
                             <p className="text-center">Loading...</p>
                           ) : subLinks && subLinks.length ? (
-                            <>
-                            {subLinks
-      .filter((subLink) => subLink?.courses?.length > 0)
-      .map((subLink, i) => {
-        const name = subLink.name || '';
-        return (
-          <Link
-            to={`/catalog/${name
-              .split(" ")
-              .join("-")
-              .toLowerCase()}`}
-            className="rounded-lg bg-transparent py-4 pl-4 hover:bg-mwhite"
-            key={i}
-            onClick={toggleDropdown}
-          >
-            <p>{name}</p>
-          </Link>
-        );
-      })}
-                            </>
+                            subLinks
+                              .filter((subLink) => subLink?.courses?.length > 0)
+                              .map((subLink, i) => {
+                                const name = subLink.name || '';
+                                return (
+                                  <Link
+                                    to={`/catalog/${name
+                                      .split(" ")
+                                      .join("-")
+                                      .toLowerCase()}`}
+                                    className="rounded-lg bg-transparent py-4 pl-4 hover:bg-gray-700"
+                                    key={i}
+                                    onClick={() => setDropdownOpen(false)}
+                                  >
+                                    <p className="text-mwhite">{name}</p>
+                                  </Link>
+                              );
+                            })
                           ) : (
-                            <p className="text-center">No Courses Found</p>
+                            <p className="text-center">No Categories Found</p>
                           )}
                         </div>
                       )}
@@ -125,11 +123,10 @@ function Navbar() {
                   ) : (
                     <Link to={path} onClick={closeMobileMenu}>
                       <p
-                        className={`${
-                          matchRoute(path)
-                            ? "text-mwhite"
-                            : "text-mwhite"
-                        } hover:text-mwhite`}
+                        className={`${matchRoute(path)
+                          ? "text-mwhite"
+                          : "text-mwhite"
+                          } hover:text-mwhite`}
                       >
                         {title}
                       </p>
@@ -161,22 +158,20 @@ function Navbar() {
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-y-4 md:gap-y-0 md:gap-x-4">
                   <Link to="/login" onClick={closeMobileMenu}>
                     <button
-                      className={`rounded-md px-4 w-[90px] py-2 transition duration-300 hover:scale-95 ${
-                        matchRoute("/login")
-                          ? "bg-richblack-800 text-white"
-                          : "bg-gradient-to-r from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-white "
-                      }`}
+                      className={`rounded-md px-4 w-[90px] py-2 transition duration-300 hover:scale-95 ${matchRoute("/login")
+                        ? "bg-richblack-800 text-white"
+                        : "bg-gradient-to-r from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-white "
+                        }`}
                     >
                       Log In
                     </button>
                   </Link>
                   <Link to="/signup" onClick={closeMobileMenu}>
                     <button
-                      className={`rounded-md px-4 w-[90px] py-2 transition duration-300 hover:scale-95 ${
-                        matchRoute("/signup")
-                          ? "bg-richblack-800 text-white"
-                          : "bg-gradient-to-r from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-white hover:bg-mwhite hover:white "
-                      }`}
+                      className={`rounded-md px-4 w-[90px] py-2 transition duration-300 hover:scale-95 ${matchRoute("/signup")
+                        ? "bg-richblack-800 text-white"
+                        : "bg-gradient-to-r from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-white hover:bg-mwhite hover:white "
+                        }`}
                     >
                       Sign Up
                     </button>

@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  screens: {
+    mobile: "640px", // Mobile view for screens <= 640px
+  },
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
@@ -168,4 +171,5 @@ module.exports = {
   },
   variants:{},
   plugins: [],
+  
 };

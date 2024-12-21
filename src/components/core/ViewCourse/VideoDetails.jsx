@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
-
+import { FaRedoAlt } from "react-icons/fa";
 import "video-react/dist/video-react.css"
 import { useLocation } from "react-router-dom"
 import { BigPlayButton, Player } from "video-react"
@@ -199,21 +199,22 @@ const VideoDetails = () => {
                   disabled={loading}
                   onclick={() => handleLectureCompletion()}
                   text={!loading ? "Mark As Completed" : "Loading..."}
-                  customClasses="text-xl max-w-max px-4 mx-auto"
+                  customClasses="text-xl text-white max-w-max px-4 mx-auto"
                 />
               )}
               <IconBtn
-                disabled={loading}
-                onclick={() => {
-                  if (playerRef?.current) {
-                    // set the current time of the video to 0
-                    playerRef?.current?.seek(0)
-                    setVideoEnded(false)
-                  }
-                }}
-                text="Rewatch"
-                customClasses="text-xl max-w-max px-4 mx-auto mt-2"
-              />
+  disabled={loading}
+  onclick={() => {
+    if (playerRef?.current) {
+      // set the current time of the video to 0
+      playerRef?.current?.seek(0)
+      setVideoEnded(false)
+    }
+  }}
+  customClasses="text-xl text-white max-w-max px-4 mx-auto mt-2"
+>
+  <FaRedoAlt className="text-xl text-white" /> {/* Rewatch icon */}
+</IconBtn>
               <div className="mt-10 flex min-w-[250px] justify-center gap-x-4 text-xl">
                 {!isFirstVideo() && (
                   <button
@@ -239,8 +240,13 @@ const VideoDetails = () => {
         </Player>
       )}
 
-      <h1 className="mt-4 text-3xl font-semibold">{videoData?.title}</h1>
-      <p className="pt-2 pb-6">{videoData?.description}</p>
+<h1 className="mt-4 text-2xl sm:text-3xl font-semibold text-white">
+  {videoData?.title}
+</h1>
+<p className="pt-2 pb-6 text-sm sm:text-base text-white">
+  {videoData?.description}
+</p>
+
     </div>
   )
 }

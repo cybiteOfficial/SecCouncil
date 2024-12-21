@@ -136,18 +136,18 @@ function CourseDetails() {
               <img
                 src={thumbnail}
                 alt="course thumbnail"
-                className="aspect-auto w-full"
+                className="aspect-auto w-full text-white"
               />
             </div>
             <div
-              className={`z-30 my-5 flex flex-col justify-center gap-4 py-5 text-lg text-richblack-5`}
+              className={`z-30 my-5 flex flex-col justify-center gap-4 py-5 text-lg text-white`}
             >
               <div>
-                <p className="text-4xl font-bold text-richblack-5 sm:text-[42px]">
+                <p className="text-4xl font-bold text-white sm:text-[42px]">
                   {courseName}
                 </p>
               </div>
-              <p className={`text-richblack-200`}>{courseDescription}</p>
+              <p className={`text-text-white`}>{courseDescription}</p>
               <div className="text-md flex flex-wrap items-center gap-2">
                 <span className="text-yellow-25">{avgReviewCount}</span>
                 <RatingStars Review_Count={avgReviewCount} Star_Size={24} />
@@ -170,8 +170,8 @@ function CourseDetails() {
                 </p>
               </div>
             </div>
-            <div className="flex w-full flex-col gap-4 border-y border-y-richblack-500 py-4 lg:hidden">
-              <p className="space-x-3 pb-4 text-3xl font-semibold text-richblack-5">
+            <div className="flex w-full flex-col gap-4 border-y border-y-white py-4 lg:hidden">
+              <p className="space-x-3 pb-4 text-3xl font-semibold text-white">
                 Rs. {price}
               </p>
               <button className="yellowButton" onClick={handleBuyCourse}>
@@ -190,11 +190,11 @@ function CourseDetails() {
           </div>
         </div>
       </div>
-      <div className="mx-auto box-content px-4 text-start text-richblack-5 lg:w-[1260px]">
+      <div className="mx-auto box-content px-4 text-start text-white lg:w-[1260px]">
         <div className="mx-auto max-w-maxContentTab lg:mx-0 xl:max-w-[810px]">
           {/* What will you learn section */}
-          <div className="my-8 border border-richblack-600 p-8">
-            <p className="text-3xl font-semibold">What you'll learn</p>
+          <div className="my-8 border border-white p-8">
+            <p className="text-3xl text-white font-semibold">What you'll learn</p>
             <div className="mt-5">
               <ReactMarkdown>{whatYouWillLearn}</ReactMarkdown>
             </div>
@@ -203,7 +203,7 @@ function CourseDetails() {
           {/* Course Content Section */}
           <div className="max-w-[830px] ">
             <div className="flex flex-col gap-3">
-              <p className="text-[28px] font-semibold">Course Content</p>
+              <p className="text-[28px] text-white font-semibold">Course Content</p>
               <div className="flex flex-wrap justify-between gap-2">
                 <div className="flex gap-2">
                   <span>

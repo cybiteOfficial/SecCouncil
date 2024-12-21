@@ -51,7 +51,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   return (
     <>
       <div
-        className={`flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5`}
+        className={`flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-white`}
       >
         {/* Course Image */}
         <img
@@ -61,7 +61,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
         />
 
         <div className="px-4">
-          <div className="space-x-3 pb-4 text-3xl font-semibold">
+          <div className="space-x-3 pb-4 text-3xl font-semibold text-white">
             Rs. {CurrentPrice}
           </div>
           <div className="flex flex-col gap-4">
@@ -78,19 +78,19 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
                 : "Buy Now"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
-              <button onClick={handleAddToCart} className="blackButton">
+              <button onClick={handleAddToCart} className="blackButton bg-caribbeangreen-100 text-white">
                 Add to Cart
               </button>
             )}
           </div>
           <div>
-            <p className="pb-3 pt-6 text-center text-sm text-richblack-25">
+            <p className="pb-3 pt-6 text-center text-sm text-white">
               30-Day Money-Back Guarantee
             </p>
           </div>
 
           <div className={``}>
-            <p className={`my-2 text-xl font-semibold `}>
+            <p className={`my-2 text-xl font-semibold text-white `}>
               This Course Includes :
             </p>
             <div className="flex flex-col gap-3 text-sm text-caribbeangreen-100">
