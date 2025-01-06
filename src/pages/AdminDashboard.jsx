@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // // // import React, { useState } from "react";
 
 // // // const initialCategories = [
@@ -520,6 +521,10 @@
 
 // // import React, { useState } from "react";
 
+=======
+// // import React, { useState } from "react";
+
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505
 // // const initialCategories = [
 // //   { id: 1, name: "Category 1" },
 // //   { id: 2, name: "Category 2" },
@@ -631,6 +636,7 @@ const AdminDashboard = () => {
   // Fetch categories, students, instructors, and analytics
 
 
+<<<<<<< HEAD
   // const fetchData = async () => {
   //   try {
   //     // Fetch categories
@@ -753,12 +759,66 @@ const AdminDashboard = () => {
           Authorization: `Bearer ${token}`,
         },
       });
+=======
+  const fetchData = async () => {
+    try {
+      // Fetch categories
+      const categoryResponse = await axios.get(
+        "http://localhost:4000/api/v1/course/showAllCategories",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setCategories(categoryResponse.data.data);
+
+      // Fetch analytics
+      const analyticsResponse = await axios.get(
+        "http://localhost:4000/api/v1/admin/analytics",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setAnalytics(analyticsResponse.data.data);
+
+      // Fetch students
+      const studentsResponse = await axios.get(
+        "http://localhost:4000/api/v1/admin/students",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setStudents(studentsResponse.data.students);
+
+      // Fetch instructors
+      const instructorsResponse = await axios.get(
+        "http://localhost:4000/api/v1/admin/instructors",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505
       setInstructors(instructorsResponse.data.instructors);
     } catch (error) {
       setError("Error fetching data. Please try again.");
     }
   };
 
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Add new category
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505
   const handleAddCategory = async (e) => {
     e.preventDefault();
 
@@ -770,10 +830,15 @@ const AdminDashboard = () => {
     }
 
     try {
+<<<<<<< HEAD
       const baseURL = process.env.REACT_APP_BASE_URL;
 
       const response = await axios.post(
         `${baseURL}/course/createCategory`,
+=======
+      const response = await axios.post(
+        "http://localhost:4000/api/v1/course/createCategory",
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505
         { name, description },
         {
           headers: {
@@ -794,6 +859,84 @@ const AdminDashboard = () => {
 
 
 
+<<<<<<< HEAD
+=======
+  // const fetchData = async () => {
+  //   try {
+  //     const baseURL = process.env.REACT_APP_BASE_URL;
+
+  //     // Fetch categories
+  //     const categoryResponse = await axios.get(`${baseURL}/course/showAllCategories`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     setCategories(categoryResponse.data.data);
+
+  //     // Fetch analytics
+  //     const analyticsResponse = await axios.get(`${baseURL}/admin/analytics`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     setAnalytics(analyticsResponse.data.data);
+
+  //     // Fetch students
+  //     const studentsResponse = await axios.get(`${baseURL}/admin/students`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     setStudents(studentsResponse.data.students);
+
+  //     // Fetch instructors
+  //     const instructorsResponse = await axios.get(`${baseURL}/admin/instructors`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     setInstructors(instructorsResponse.data.instructors);
+  //   } catch (error) {
+  //     setError("Error fetching data. Please try again.");
+  //   }
+  // };
+
+  // const handleAddCategory = async (e) => {
+  //   e.preventDefault();
+
+  //   const { name, description } = newCategory;
+
+  //   if (!name.trim()) {
+  //     setError("Category name cannot be empty");
+  //     return;
+  //   }
+
+  //   try {
+  //     const baseURL = process.env.REACT_APP_BASE_URL;
+
+  //     const response = await axios.post(
+  //       `${baseURL}/course/createCategory`,
+  //       { name, description },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       }
+  //     );
+
+  //     setSuccess("Category added successfully!");
+  //     setCategories([...categories, response.data.category]);
+  //     setNewCategory({ name: "", description: "" });
+  //     setError(null);
+  //   } catch (error) {
+  //     setError("Failed to add category. Please try again.");
+  //   }
+  // };
+
+
+
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505
 
 
   return (
@@ -1364,3 +1507,7 @@ export default AdminDashboard;
 // };
 
 // export default AdminDashboard;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505

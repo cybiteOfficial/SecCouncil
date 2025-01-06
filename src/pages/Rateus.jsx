@@ -44,9 +44,9 @@ function RateUsComponent({ previousContent }) {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row justify-center lg:justify-between w-11/12 mx-auto max-w-6xl py-16 lg:py-24 bg-black-900 rounded-lg shadow-lg">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-between w-11/12 mx-auto max-w-6xl py-16 lg:py-24 ">
         <div className="lg:w-3/5 p-8 bg-black-800 border border-black-600 rounded-lg shadow-md transition-all duration-300 hover:border-black-300 hover:shadow-lg">
-          <h2 className="text-3xl font-semibold text-center text-black-5 mb-4">We Value Your Feedback!</h2>
+          <h2 className="text-3xl font-semibold text-center bg-gradient-to-b from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-transparent bg-clip-text font-bold mb-4">We Value Your Feedback!</h2>
           <p className="text-center text-black-300 mb-6">Please take a moment to rate your experience with our service. Your feedback helps us improve and provide you with the best service possible.</p>
           <div className="flex justify-center mb-6">
             {[...Array(5)].map((_, index) => {

@@ -32,7 +32,6 @@
     "color-convert": "^2.0.1",
     "color-name": "^1.1.4",
     "combined-stream": "^1.0.8",
-    "concurrently": "^9.0.1",
     "convert-source-map": "^2.0.0",
     "copy-to-clipboard": "^3.3.3",
     "cross-spawn": "^7.0.3",
@@ -189,6 +188,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"

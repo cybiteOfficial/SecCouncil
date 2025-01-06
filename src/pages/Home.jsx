@@ -33,13 +33,13 @@ function Home() {
         </Link>
 
         {/* Heading */}
-        <div className="text-center text-4xl font-semibold">
+        <div className="text-center text-4xl font-semibold text-">
           Empower Your Future with
           <HighlightText text={"Coding Skills"} />
         </div>
 
         {/* Sub Heading */}
-        <div className="-mt-3 w-[90%] text-center text-lg font-bold text-richblack-300">
+        <div className="-mt-3 w-[90%] text-center text-lg font-bold text-white">
           With our online coding courses, you can learn at your own pace, from
           anywhere in the world, and get access to a wealth of resources,
           including hands-on projects, quizzes, and personalized feedback from
@@ -73,7 +73,7 @@ function Home() {
           <CodeBlocks
             position={"lg:flex-row"}
             heading={
-              <div className="text-4xl font-semibold">
+              <div className="text-4xl font-semibold ">
                 Unlock your
                 <HighlightText text={"coding potential"} /> with our online
                 courses.
@@ -132,7 +132,7 @@ function Home() {
       </div>
 
       {/* Section 2 */}
-      <div className="bg-pure-greys-5 text-richblack-700">
+      <div className="bg-white text-mwhite">
         <div className="homepage_bg h-[320px]">
           {/* Explore Full Catagory Section */}
           <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8">
@@ -154,12 +154,12 @@ function Home() {
         <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 ">
           {/* Job that is in Demand - Section 1 */}
           <div className="mb-10 mt-[-100px] flex flex-col justify-between gap-7 lg:mt-20 lg:flex-row lg:gap-0">
-            <div className="text-4xl font-semibold lg:w-[45%] text-black">
+            <div className="text-4xl font-semibold lg:w-[45%] text-mwhite">
               Get the skills you need for a{" "}
               <HighlightText text={"job that is in demand."} />
             </div>
             <div className="flex flex-col items-start gap-10 lg:w-[40%]">
-              <div className="text-[16px] text-black">
+              <div className="text-[16px] text-mwhite">
                 The modern SecCouncil dictates its own terms. Today, to
                 be a competitive specialist requires more than professional
                 skills.

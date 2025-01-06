@@ -27,7 +27,7 @@ const secCouncilStyles = {
     animation: 'spin 1s linear infinite',
   },
   text: {
-    color: 'orange',
+    color: '#32a7f3',
     marginTop: '10px',
     fontSize: '50px',
     fontWeight: 'bold',
@@ -40,7 +40,7 @@ const Loading = () => {
     <>
       <div style={{ ...styles.loaderContainer, backgroundColor: "#FFFFFF" }}>
         <SecCouncil /> {/* Using the SecCouncil component */}
-        <PropagateLoader size={15} color={"orange"} loading={true} />
+        <PropagateLoader size={15} color={"#32a7f3"} loading={true} />
       </div>
     </>
   );

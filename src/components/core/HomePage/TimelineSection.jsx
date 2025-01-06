@@ -38,12 +38,12 @@ const TimelineSection = () => {
             return (
               <div className="flex flex-col lg:gap-3" key={i}>
                 <div className="flex gap-6" key={i}>
-                  <div className="w-[52px] h-[52px] bg-white rounded-full flex justify-center items-center shadow-[#00000012] shadow-[0_0_62px_0]">
+                  <div className="w-[52px] h-[52px] bg-mwhite rounded-full flex justify-center items-center shadow-[#00000012] shadow-[0_0_62px_0]">
                     <img src={ele.Logo} alt="" />
                   </div>
                   <div>
-                    <h2 className="font-semibold text-[18px] text-black">{ele.Heading}</h2>
-                    <p className="text-base text-black">{ele.Description}</p>
+                    <h2 className="font-semibold text-[18px] text-mwhite">{ele.Heading}</h2>
+                    <p className="text-base text-mwhite">{ele.Description}</p>
                   </div>
                 </div>
                 <div

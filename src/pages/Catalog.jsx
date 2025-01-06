@@ -77,34 +77,38 @@ const Catalog = () => {
         <>
             {/* Hero Section */}
             <div className="box-content bg-mwhite px-4">
-                <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent">
-                    <p className="text-sm text-black">
+                <div className="mx-auto flex flex-col justify-center gap-4 lg:w-[80%] w-[90%] min-h-[260px]">
+                    <p className="text-sm text-white text-left">
                         {`Home / Catalog / `}
                         <span className="text-yellow-25">
                             {catalogPageData?.data?.selectedCategory?.name}
                         </span>
                     </p>
+<<<<<<< HEAD
                     <p className="text-3xl text-mwhite">
+=======
+                    <p className="text-3xl text-white text-left">
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505
                         {catalogPageData?.data?.selectedCategory?.name}
                     </p>
-                    <p className="max-w-[870px] text-black">
+                    <p className="text-white text-left max-w-[870px]">
                         {catalogPageData?.data?.selectedCategory?.description}
                     </p>
                 </div>
             </div>
 
             {/* Section 1: Courses to get started */}
-            <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-                <div className="section_heading">Courses to get you started</div>
+            <div className="mx-auto w-[80%] py-12 px-4">
+                <div className="section_heading bg-gradient-to-b from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-transparent bg-clip-text font-bold text-center lg:text-left">Courses to get you started</div>
                 <div className="my-4 flex border-b border-b-black text-sm">
                     <p
-                        className={`px-4 py-2 ${active === 1 ? "border-b border-b-yellow-25 text-yellow-25" : "text-black"} cursor-pointer`}
+                        className={`px-4 py-2 ${active === 1 ? "border-b border-b-yellow-25 text-yellow-25" : "text-white"} cursor-pointer`}
                         onClick={() => setActive(1)}
                     >
                         Most Popular
                     </p>
                     <p
-                        className={`px-4 py-2 ${active === 2 ? "border-b border-b-yellow-25 text-yellow-25" : "text-black"} cursor-pointer`}
+                        className={`px-4 py-2 ${active === 2 ? "border-b border-b-yellow-25 text-yellow-25" : "text-white"} cursor-pointer`}
                         onClick={() => setActive(2)}
                     >
                         New
@@ -116,8 +120,8 @@ const Catalog = () => {
             </div>
 
             {/* Section 2: Top Courses in Different Category */}
-            <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-                <div className="section_heading">
+            <div className="mx-auto w-[80%] py-12 px-4">
+                <div className="section_heading bg-gradient-to-b from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-transparent bg-clip-text font-bold text-center lg:text-left">
                     Top courses in {catalogPageData?.data?.differentCategory?.name}
                 </div>
                 <div className="py-8">
@@ -126,8 +130,8 @@ const Catalog = () => {
             </div>
 
             {/* Section 3: Frequently Bought */}
-            <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-                <div className="section_heading">Frequently Bought</div>
+            <div className="mx-auto w-[80%] py-12 px-4">
+                <div className="section_heading bg-gradient-to-b from-[#004aad] via-[#32a7f3] to-[#6ca3cc] text-transparent bg-clip-text font-bold text-center lg:text-left">Frequently Bought</div>
                 <div className="py-8">
                     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                         {catalogPageData?.data?.mostSellingCourses?.slice(0, 4).map((course, i) => (

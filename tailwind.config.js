@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  screens: {
+    mobile: "640px", // Mobile view for screens <= 640px
+  },
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
@@ -126,6 +129,7 @@ module.exports = {
         900: "#340019",
       },
       yellow: {
+<<<<<<< HEAD
         5: "#34b6ff",
         25: "#34b6ff",
         50: "#34b6ff",
@@ -138,7 +142,22 @@ module.exports = {
         700: "#34b6ff",
         800: "#34b6ff",
         900: "#34b6ff",
+=======
+        5: "#32a7f3",
+        25: "#32a7f3",
+        50: "#32a7f3",
+        100: "#32a7f3",
+        200: "#32a7f3",
+        300: "#32a7f3",
+        400: "#32a7f3",
+        500: "#32a7f3",
+        600: "#32a7f3",
+        700: "#32a7f3",
+        800: "#32a7f3",
+        900: "#32a7f3"
+>>>>>>> 93ba38d1c4ac35be5d0461b3f339f369a7e2d505
     }
+    
 ,
       "pure-greys": {
         5: "#F9F9F9",
@@ -167,4 +186,5 @@ module.exports = {
   },
   variants:{},
   plugins: [],
+  
 };
